@@ -18,8 +18,8 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode    = $treeBuilder->root('terox_subscription');
+        $treeBuilder = new TreeBuilder('terox_subscription');
+        $rootNode    = $treeBuilder->getRootNode(');
 
         $rootNode
             ->children()
