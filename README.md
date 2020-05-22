@@ -19,7 +19,7 @@ and solid base where start to handle this type of products in your Symfony appli
  a subscription should be handled to fit to your requirements.
 
 **Compatible**
- * Symfony 3.3+/4+ applications with Doctrine
+ * Symfony 5+ applications with Doctrine
  
 Documentation
 -------------
