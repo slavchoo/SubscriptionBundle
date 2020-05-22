@@ -117,7 +117,7 @@ class SubscriptionManager
         $subscription->activate();
 
         $subscriptionEvent = new SubscriptionEvent($subscription, $isRenew);
-        $this->eventDispatcher->dispatch(SubscriptionEvents::ACTIVATE_SUBSCRIPTION, $subscriptionEvent);
+        $this->eventDispatcher->dispatch($subscriptionEvent, SubscriptionEvents::ACTIVATE_SUBSCRIPTION);
     }
 
     /**
@@ -156,7 +156,7 @@ class SubscriptionManager
         $this->activate($newSubscription, true);
 
         $subscriptionEvent = new SubscriptionEvent($newSubscription);
-        $this->eventDispatcher->dispatch(SubscriptionEvents::RENEW_SUBSCRIPTION, $subscriptionEvent);
+        $this->eventDispatcher->dispatch($subscriptionEvent, SubscriptionEvents::RENEW_SUBSCRIPTION);
 
         return $newSubscription;
     }
@@ -190,7 +190,7 @@ class SubscriptionManager
         $subscription->deactivate();
 
         $subscriptionEvent = new SubscriptionEvent($subscription, $isRenew);
-        $this->eventDispatcher->dispatch(SubscriptionEvents::EXPIRE_SUBSCRIPTION, $subscriptionEvent);
+        $this->eventDispatcher->dispatch($subscriptionEvent, SubscriptionEvents::EXPIRE_SUBSCRIPTION);
     }
 
     /**
@@ -204,7 +204,7 @@ class SubscriptionManager
         $subscription->deactivate();
 
         $subscriptionEvent = new SubscriptionEvent($subscription);
-        $this->eventDispatcher->dispatch(SubscriptionEvents::DISABLE_SUBSCRIPTION, $subscriptionEvent);
+        $this->eventDispatcher->dispatch($subscriptionEvent, SubscriptionEvents::DISABLE_SUBSCRIPTION);
     }
 
     /**
